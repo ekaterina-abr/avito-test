@@ -1,0 +1,19 @@
+.App {
+    background-color: cadetblue;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        color: white;
+        font-weight: 600;
+        padding: 30px;
+    }
+}

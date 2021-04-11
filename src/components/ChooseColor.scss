@@ -1,0 +1,12 @@
+.choose_color {
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+        margin: 20px 0;
+    }
+
+    input[type='color'] {
+        margin: 0;
+    }
+}

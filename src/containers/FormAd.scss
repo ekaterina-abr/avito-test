@@ -1,0 +1,50 @@
+$color: rgb(105, 105, 105);
+
+.FormAdWrapper {
+    background-color: white;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 8px;
+    color:  $color;
+
+    h2 {
+        font-weight: 600;
+        color: darken($color, 6%);
+    }
+
+    .FormAd {
+        display: flex;
+        flex-direction: column;
+
+        fieldset {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 8px;
+            border: 1px solid rgba(190, 190, 190, 0.7);
+            border-radius: 8px;
+            padding-bottom: 20px;
+        }
+
+        .choose_background {
+            h4 {
+                margin: 20px 0;
+            }
+
+            .choose_background_type {
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 8px;
+            }
+
+            label {
+                padding: 0 20px 0 4px;
+            }
+        }
+        
+        small {
+            margin-top: 40px;
+        }
+    }
+}
