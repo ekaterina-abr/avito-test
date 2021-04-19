@@ -1,5 +1,6 @@
 import React from 'react'
-import ColorInput from './ColorInput'
+import ColorInput from '../ColorInput'
+import './ChooseGradient.scss'
 
 const ChooseGradient = (props) => {
     return (

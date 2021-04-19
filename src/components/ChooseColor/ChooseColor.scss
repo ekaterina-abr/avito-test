@@ -1,0 +1,16 @@
+.choose_color {
+    display: flex;
+    flex-direction: row;
+
+    h4 {
+        margin: 20px 0;
+    }
+
+    input[type='color'] {
+        margin: 16px 20px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import ColorInput from './ColorInput'
+import ColorInput from '../ColorInput'
 import './ChooseColor.scss'
 
 const ChooseColor = (props) => {

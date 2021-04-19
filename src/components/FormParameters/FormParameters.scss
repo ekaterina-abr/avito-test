@@ -1,0 +1,60 @@
+.FormParameters {
+    display: flex;
+    flex-direction: column;
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 8px;
+        border: 1px solid rgba(190, 190, 190, 0.7);
+        border-radius: 8px;
+        padding-bottom: 20px;
+    }
+
+    .choose_background {
+        h4 {
+            margin: 20px 0;
+        }
+
+        .choose_background_type {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 8px;
+
+            input {
+                margin-right: 0;
+            }
+
+            input:hover, label:hover {
+                cursor: pointer;
+            }
+        }
+
+        label {
+            padding: 0 20px 0 6px;
+        }
+    }
+    
+    small {
+        margin-top: 40px;
+    }
+
+    .change_font {
+        display: flex;
+        flex-direction: row;
+        margin-top: 20px;
+
+        h4 {
+            margin: 0;
+            margin-right: 20px;
+        }
+
+        i.fa {
+            margin-right: 16px;
+        }
+
+        i.fa:hover {
+            cursor: pointer;
+        }
+    }
+}

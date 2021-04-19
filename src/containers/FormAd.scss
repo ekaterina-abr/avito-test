@@ -2,7 +2,6 @@ $color: rgb(105, 105, 105);
 
 .FormAdWrapper {
     background-color: white;
-    width: 50%;
     display: flex;
     flex-direction: column;
     padding: 30px;
@@ -16,35 +15,69 @@ $color: rgb(105, 105, 105);
 
     .FormAd {
         display: flex;
+        flex-direction: row;
+    }
+
+    .FormViewWrapper {
+        display: flex;
         flex-direction: column;
+        margin-left: 30px;
 
-        fieldset {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 8px;
+        .BannerBorder {
             border: 1px solid rgba(190, 190, 190, 0.7);
-            border-radius: 8px;
-            padding-bottom: 20px;
+            margin: 0;
+            padding: 0;
+            width: 282px;
+            position: relative;
+
+            .FormView {
+                width: 100%;
+                height: 376px;
+    
+                p {
+                    position: absolute;
+                    left: 0;
+                    bottom: 0;
+                    line-height: 1.5;
+                    margin: 0 20px 16px;
+                    hyphens: auto;
+                    -webkit-hyphens: auto;
+                    -ms-hyphens: auto;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-family: Verdana, Geneva, sans-serif;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
         }
 
-        .choose_background {
-            h4 {
-                margin: 20px 0;
+        .download_buttons {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+
+            button {
+                padding: 10px;
+                width: 100px;
+                height: 60px;
+                margin-right: 6px;
+                margin-top: 20px;
+                font-size: 14px;
+                background-color: rgba(243, 176, 76, 0.6);
+                border: 1px solid rgba(192, 131, 40, 0.7);
+                border-radius: 2px;
             }
 
-            .choose_background_type {
-                display: flex;
-                flex-direction: row;
-                margin-bottom: 8px;
+            button:hover {
+                cursor: pointer;
             }
 
-            label {
-                padding: 0 20px 0 4px;
+            button:last-child {
+                margin-right: 0;
             }
-        }
-        
-        small {
-            margin-top: 40px;
         }
     }
 }

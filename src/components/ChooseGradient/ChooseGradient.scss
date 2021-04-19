@@ -1,0 +1,9 @@
+.gradient_color {
+    input:hover, label:hover {
+        cursor: pointer;
+    }
+
+    input[type='color'] {
+        margin-right: 6px;
+    }
+}

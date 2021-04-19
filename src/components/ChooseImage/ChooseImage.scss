@@ -1,0 +1,17 @@
+.choose_image {
+    margin: 14px;
+
+    .upload_url {
+        display: flex;
+        margin-top: 14px;
+
+        p {
+            margin: 0;
+            margin-right: 8px;
+        }
+
+        input {
+            margin-right: 6px;
+        }
+    }
+}

@@ -1,8 +1,7 @@
 import React, {Component} from 'react'
 import './FormAd.scss'
-import ChooseColor from '../components/ChooseColor'
-import ChooseGradient from '../components/ChooseGradient'
-import ChooseImage from '../components/ChooseImage'
+import FormParameters from '../components/FormParameters/FormParameters'
+import FormViewWrapper from '../components/FormViewWrapper'
 
 class FormAd extends Component {
     constructor(props) {
@@ -10,7 +9,9 @@ class FormAd extends Component {
         this.state = {
             optionChecked: -1,
             background: {},
-            text: ''
+            text: '',
+            fontSize: 14,
+            fontColor: '#000000'
         }
     }
 
@@ -80,7 +81,6 @@ class FormAd extends Component {
         let imgUrl = URL.createObjectURL(file)
         this.setState({
             background: {
-                file,
                 imgUrl
             }
         })
@@ -93,43 +93,59 @@ class FormAd extends Component {
         })
     } 
 
+    onSubtractFontSize = () => {
+        if (this.state.fontSize > 2) {
+            this.setState({
+                fontSize: this.state.fontSize - 2
+            })
+        }
+    }
+
+    onAddFontSize = () => {
+        if (this.state.fontSize < 60) {
+            this.setState({
+                fontSize: this.state.fontSize + 2
+            })
+        }
+    }
+
+    onChangeFontColor = event => {
+        this.setState({
+            fontColor: event.target.value
+        })
+    }
+
+    onUploadImgUrl = (event) => {
+        event.preventDefault()
+        var imgUrl = document.getElementById('img-url').value
+        this.setState({
+            background: {
+                imgUrl
+            }
+        })
+    }
+
     render() {
         return (
             <div className='FormAdWrapper'>
                 <h2>Выберите параметры баннера</h2>
-                <form className='FormAd'>
-                    <fieldset className='choose_background'>
-                        <h4>Выберите фон*:</h4>
-                        <div className='choose_background_type'>
-                            <input type='radio' name='ad_background' id='single-color-option' 
-                                defaultChecked={this.state.optionChecked === 0}
-                                onChange={() => this.onChangeRadioChecked(0)}/>
-                            <label htmlFor='single-color-option'>одноцветный</label>
-                            <input type='radio' name='ad_background' id='gradient-option' 
-                                defaultChecked={this.state.optionChecked === 1} 
-                                onChange={() => this.onChangeRadioChecked(1)}/>
-                            <label htmlFor='gradient-option'>градиентный</label>
-                            <input type='radio' name='ad_background' id='image-option'
-                                defaultChecked={this.state.optionChecked === 2}
-                                onChange={() => this.onChangeRadioChecked(2)}/>
-                            <label htmlFor='image-option'>загрузить изображение</label>
-                        </div>
-
-                        { this.state.optionChecked === 0 ? <ChooseColor value={this.state.background.color} onChangeColor={this.onChangeColor}/> :
-                            this.state.optionChecked === 1 ? <ChooseGradient id1='linear-gradient' id2='radial-gradient' 
-                                                                type={this.state.background.gradient} values={this.state.background.colors} 
-                                                                onChangeGradientColor={(event, i) => this.onChangeGradientColor(event, i)}
-                                                                onChangeGradientType={(type) => this.onChangeGradientType(type)}/> :
-                            this.state.optionChecked === 2 ? <ChooseImage onUploadImage={event => this.onUploadImage(event)}/> : null }
-
-                    </fieldset>
-                    <fieldset>
-                        <h4>Введите текст:</h4>
-                        <input type='text' onChange={this.onAddText}/>
-                    </fieldset>
-        
-                    <small>* - поле, обязательное для заполнения</small>
-                </form>
+                <div className='FormAd'>
+                    <FormParameters optionChecked={this.state.optionChecked} state={this.state}
+                        onChangeColor={this.onChangeColor}
+                        onChangeRadioChecked={this.onChangeRadioChecked}
+                        onChangeGradientColor={this.onChangeGradientColor}
+                        onChangeGradientType={this.onChangeGradientType}
+                        onUploadImage={this.onUploadImage}
+                        onSubtractFontSize={this.onSubtractFontSize}
+                        onAddFontSize={this.onAddFontSize}
+                        onAddText={this.onAddText}
+                        onChangeFontColor={this.onChangeFontColor}
+                        onUploadImgUrl={this.onUploadImgUrl}/>
+                    
+                    <FormViewWrapper state={this.state}/>
+                    
+                </div>
+                
             </div>
         )
     }
